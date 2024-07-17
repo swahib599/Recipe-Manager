@@ -1,0 +1,67 @@
+{ 
+  "italian": [
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "ingredients": "Spaghetti, eggs, bacon, parmesan cheese, black pepper",
+      "steps": "1. Cook spaghetti until al dente. 2. Fry bacon until crispy. 3. Mix eggs, cheese, and pepper. 4. Combine everything.",
+      "image": "images/Spaghetti-Carbonara.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Chicken Tikka Masala",
+      "ingredients": "Chicken, yogurt, tomatoes, spices, cream",
+      "steps": "1. Marinate chicken in yogurt and spices. 2. Grill chicken. 3. Prepare tomato sauce. 4. Combine and simmer.",
+      "image": "images/Chicken-Tikka-Masala.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Chocolate Cake",
+      "ingredients": "Flour, sugar, cocoa powder, eggs, butter, milk",
+      "steps": "1. Mix dry ingredients. 2. Beat eggs and butter. 3. Combine wet ingredients. 4. Bake in preheated oven.",
+      "image": "images/Chocolate-Cake.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Margarita Pizza",
+      "ingredients": "Pizza dough, tomatoes, mozzarella cheese, basil, olive oil",
+      "steps": "1. Roll out pizza dough. 2. Spread tomato sauce. 3. Add cheese and basil. 4. Drizzle with olive oil.",
+      "image": "images/Margarita-Pizza.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Berry Smoothie",
+      "ingredients": "Mixed berries, yogurt, honey, banana",
+      "steps": "1. Blend berries and banana. 2. Add yogurt and honey. 3. Blend until smooth.",
+      "image": "images/Berry-Smoothie.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Baked Ham with Red Caviar",
+      "ingredients": "Ham, red caviar, butter, herbs",
+      "steps": "1. Bake ham. 2. Top with butter and red caviar. 3. Garnish with herbs.",
+      "image": "images/baked-ham-red-caviar.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Deep-fried Mozzarella Cheese Balls",
+      "ingredients": "Mozzarella, breadcrumbs, eggs, oil",
+      "steps": "1. Coat mozzarella in breadcrumbs and egg. 2. Deep-fry until golden.",
+      "image": "images/Deep-fried-mozzarella-cheese-balls.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Hamburger and Chips",
+      "ingredients": "Ground beef, buns, lettuce, tomato, potatoes, oil",
+      "steps": "1. Grill beef patty. 2. Assemble burger with lettuce and tomato. 3. Fry potatoes.",
+      "image": "images/hamburger-chips.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Cheesy Chicken",
+      "ingredients": "Chicken breasts, cheese, breadcrumbs, eggs, oil",
+      "steps": "1. Coat chicken in egg and breadcrumbs. 2. Fry until golden. 3. Top with cheese and bake.",
+      "image": "images/Cheesy-Chicken.jpg"
+    }
+  ]
+}

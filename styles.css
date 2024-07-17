@@ -1,0 +1,116 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #8fa0a0;
+}
+
+header {
+  background-color: #9f8c6d;
+  color: #210a0a;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+/* Recipe Form */
+#recipe-form {
+  width: 40%;
+  background-color: #9cad95;
+  padding: 1rem;
+  border: 1px solid #75703c;
+}
+
+/* Recipes List */
+#recipes {
+  width: 55%;
+  background-color: #8a957c;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+#recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recipe-card {
+  width: 45%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #a82323;
+  background-color: #a38c5a;
+}
+
+.recipe-card img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.recipe-card img:hover {
+  transform: scale(1.2);
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #e19f12;
+}
+
+/* Red button styles */
+.red-button {
+  background-color: #f44336;
+}
+
+.red-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #recipe-form,
+  #recipes {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .recipe-card {
+    width: 100%;
+  }
+}
