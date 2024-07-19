@@ -1,4 +1,4 @@
-/* Global styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -30,7 +30,7 @@ main {
 /* Recipes List */
 #recipes {
   width: 55%;
-  background-color: #8a957c;
+  background-color: #777743;
   padding: 1rem;
   border: 1px solid #ccc;
 }
