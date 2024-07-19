@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <img src="${recipe.image}" alt="${recipe.title}">
         <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
         <p><strong>Steps:</strong> ${recipe.steps}</p>
-        <button class="edit-button" data-id="${recipe.id}">Edit</button>
+        <p><strong>Rating:</strong> <span id="rating-${recipe.id}">${recipe.rating || 0}</span></p>
+        <button class="rating-button" data-id="${recipe.id}">Rate</button>
         <button class="delete-button" data-id="${recipe.id}">Delete</button>
       `;
       recipesContainer.appendChild(recipeCard);
@@ -41,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
       title: formData.get('title'),
       ingredients: formData.get('ingredients'),
       steps: formData.get('steps'),
-      image: imageFile ? URL.createObjectURL(imageFile) : ''
+      image: imageFile ? URL.createObjectURL(imageFile) : '',
+      rating: 0
     };
 
     const existingRecipeIndex = recipes.findIndex(recipe => recipe.id === newRecipe.id);
@@ -82,7 +84,42 @@ document.addEventListener('DOMContentLoaded', function() {
       recipeForm['title'].value = recipeToEdit.title;
       recipeForm['ingredients'].value = recipeToEdit.ingredients;
       recipeForm['steps'].value = recipeToEdit.steps;
+      // Remove image preview
+      recipeForm['image'].value = '';
     }
+  }
+
+  function updateRating(id) {
+    const ratingInput = prompt("Enter new rating (0-5):", "0");
+    const newRating = parseInt(ratingInput);
+    if (isNaN(newRating) || newRating < 0 || newRating > 5) return;
+
+    const recipeToUpdate = recipes.find(recipe => recipe.id === id);
+    if (recipeToUpdate) {
+      recipeToUpdate.rating = newRating;
+      updateRecipe(recipeToUpdate);
+      // Update the rating display locally
+      const ratingSpan = document.getElementById(`rating-${id}`);
+      if (ratingSpan) {
+        ratingSpan.textContent = newRating;
+      }
+    }
+  }
+
+  function updateRecipe(recipe) {
+    fetch(`http://localhost:3000/italian/${recipe.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(recipe)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Recipe updated:', data);
+      // No need to call displayRecipes here, as the rating is updated locally
+    })
+    .catch(error => console.error('Error updating recipe:', error));
   }
 
   function clearForm() {
@@ -91,11 +128,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   recipesContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('edit-button')) {
-      editRecipe(parseInt(event.target.dataset.id));
-    }
+    const id = parseInt(event.target.dataset.id);
     if (event.target.classList.contains('delete-button')) {
-      deleteRecipe(parseInt(event.target.dataset.id));
+      deleteRecipe(id);
+    }
+    if (event.target.classList.contains('rating-button')) {
+      updateRating(id);
     }
   });
 
